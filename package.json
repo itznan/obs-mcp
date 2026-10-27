@@ -1,0 +1,33 @@
+{
+  "name": "obs-mcp",
+  "version": "1.1.0",
+  "description": "MCP server for OBS Studio with dynamic tool filtering and compound tools",
+  "license": "GPL-2.0",
+  "type": "module",
+  "bin": {
+    "obs-mcp": "./build/index.js"
+  },
+  "main": "build/index.js",
+  "scripts": {
+    "build": "tsc && node -e \"try { fs.chmodSync('build/index.js', 0o755) } catch {}\"",
+    "start": "node build/index.js",
+    "test": "vitest run"
+  },
+  "files": [
+    "build"
+  ],
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.32.2",
+    "crypto-js": "^4.2.0",
+    "ws": "^8.22.0",
+    "zod": "^3.25.76"
+  },
+  "devDependencies": {
+    "@types/crypto-js": "^4.2.2",
+    "@types/node": "^26.6.5",
+    "@types/ws": "^8.18.2",
+    "typescript": "^5.9.3",
+    "vite": "^8.3.5",
+    "vitest": "^5.0.5"
+  }
+}
